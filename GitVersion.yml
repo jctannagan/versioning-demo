@@ -1,0 +1,14 @@
+# GitVersion 6.x config — trunk-based flow (feature branches -> main)
+# Version bumps come from markers in commit messages / squashed PR titles.
+workflow: GitHubFlow/v1
+
+major-version-bump-message: '\+(breaking|major)'
+minor-version-bump-message: '\+feat'
+patch-version-bump-message: '\+fix'
+no-bump-message: '\+(chore|none|skip)'
+
+branches:
+  main:
+    increment: None              # only bump when a marker says so (+chore stays put)
+    label: ''                    # clean versions on main: 2.1.0, not 2.1.0-1
+    mode: ContinuousDeployment
